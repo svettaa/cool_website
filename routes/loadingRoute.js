@@ -35,7 +35,7 @@ module.exports = function (app) {
     app.route("/adminApplication.html").get((req, res) => {
         application.find()
             .then(() => {
-                res.render(path.join(__dirname, "..", "adminApplication.html"));
+                res.render(path.join(__dirname, "..", "adminApplications.html"));
             })
             .catch((err) => {
                 console.log(err);
