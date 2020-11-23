@@ -1,6 +1,6 @@
 const articles = require("../server/ModelAplications").aplication;
 const path = require("path");
-const requests = require("../server/Requests");
+const requests = require("../server/RequestsAplications");
 module.exports = function (app) {
     var varifiID;
     app.use(function (req, res, next) {
