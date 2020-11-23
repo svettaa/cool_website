@@ -7,7 +7,7 @@ const applications = mongoose.model("application", new Schema({
     email:String,
     phone:String,
     description: String,
-     varificated:Boolean,
+    varificated:Boolean,
     token : String,
 }, {collection: "application"}))
 

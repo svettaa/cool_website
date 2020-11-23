@@ -14,17 +14,17 @@ module.exports = function (app) {
     /*app.route("/").get((req, res) => {
         articles.find()
             .then(() => {
-                res.render(path.join(__dirname, "..", "adminMode.html"));
+                res.render(path.join(__dirname, "..", "adminTrainings.html"));
             })
             .catch((err) => {
                 console.log(err);
             });
     });
 
-    app.route("/adminMode.html").get((req, res) => {
+    app.route("/adminTrainings.html").get((req, res) => {
         articles.find()
             .then(() => {
-                res.render(path.join(__dirname, "..", "adminMode.html"));
+                res.render(path.join(__dirname, "..", "adminTrainings.html"));
             })
             .catch((err) => {
                 console.log(err);

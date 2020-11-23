@@ -14,7 +14,7 @@ server.engine('html', require('ejs').renderFile);
 server.set('view engine', 'twig');
 
 server.use("/static", express.static(path.join(__dirname, "..", "static")));
-server.use("adminMode.html", express.static(path.join(__dirname, "..", "static")));
+server.use("adminTrainings.html", express.static(path.join(__dirname, "..", "static")));
 
 articlesDB.mongoose
     .connect(uri1, {

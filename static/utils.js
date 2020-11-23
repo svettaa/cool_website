@@ -16,7 +16,6 @@ function createIconsTd(id, iconClassNames) {
     return td;
 }
 
-
 function createIcon(id, className) {
     const span = $('<span></span>');
     span.addClass('table-icon');
@@ -30,11 +29,6 @@ function createTd(text) {
     td.html(text);
     return td;
 }
-
-function clearMessagesBlock(block) {
-    block.html('');
-}
-
 
 function createHeaderTable(headers) {
     return createHeaderTableParamIconWidth('100px', headers)
@@ -61,7 +55,6 @@ function createHeaderTableParamIconWidth(iconWidth, headers) {
 
     return table;
 }
-
 
 function createIconTh(iconWidth) {
     const th = $('<th></th>');
