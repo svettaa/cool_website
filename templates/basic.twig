@@ -115,7 +115,7 @@ $(document).ready(function() {
             $.ajax({
 
                 type: 'POST',
-                url: '/api/group',
+                url: '/api/aplication',
                 dataType: 'json',
                 data: JSON.stringify({
                     surname: $(this).find('[name=surname]').val(),
@@ -152,7 +152,7 @@ $(document).ready(function() {
         else{
             $.ajax({
                 type: 'POST',
-                url: '/api/group',
+                url: '/api/aplication',
                 dataType: 'json',
                 data: JSON.stringify({
                     surname: $(this).find('[name=surname]').val(),
