@@ -1,0 +1,42 @@
+{% extends ".templates\basic.twig" %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+<div id="content"></div>
+
+<template id="ukr">
+  <h1>Насолоджуйся послугами нашого тренінгового центру!</h1>
+
+  <p>Хто не хоче насолоджуватися - Вам же гірше. Ми Вас знайдемо і доведемо Вам особисто,
+      і Вашим потенційним роботодавцям, що Ви нічого не знаєте.</p>
+</template>
+
+<template id="eng">
+ <h1>Enjoy the services of our training center!</h1>
+
+ <p>If you don't want to enjoy - it is worse for you!
+ We will prove you and your potential employers that you know nothing!</p>
+</template>
+
+{% endblock %}
+
+{% block script %}
+
+//change form (language)
+    let place = document.getElementById('content');
+    var temp1 = document.getElementById('ukr');
+    var temp2 = document.getElementById('eng');
+    var clon1 = temp1.content.cloneNode(true);
+    var clon2 = temp2.content.cloneNode(true);
+
+
+    let lang = getCookie('lang');
+
+    if(lang === 'eng'){
+        place.appendChild(clon2);
+    } else {
+        place.appendChild(clon1);
+    }
+
+{% endblock %}

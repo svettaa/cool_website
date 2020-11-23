@@ -1,0 +1,46 @@
+{% extends ".templates\basic.twig" %}
+
+{% block title %}Про нас{% endblock %}
+
+{% block content %}
+<div id="content"></div>
+
+<template id="ukr">
+  <div class="jumbotron">
+      <p>
+          Найкрутіший тренінговий центр у Києві запрошує всіх бажаючих доєднатися та отримати нові корисні знання!
+      </p>
+  </div>
+  <p>Для детальної інформації, заповніть заявку.</p>
+</template>
+
+<template id="eng">
+<div class="jumbotron">
+      <p>
+         The best training center in Kyiv invites you to join and get new useful skills!
+         </p>
+  </div>
+  <p>For more information, please, fill the application form.</p>
+</template>
+
+{% endblock %}
+
+{% block script %}
+
+//change form (language)
+    let place = document.getElementById('content');
+    var temp1 = document.getElementById('ukr');
+    var temp2 = document.getElementById('eng');
+    var clon1 = temp1.content.cloneNode(true);
+    var clon2 = temp2.content.cloneNode(true);
+
+
+    let lang = getCookie('lang');
+
+    if(lang === 'eng'){
+        place.appendChild(clon2);
+    } else {
+        place.appendChild(clon1);
+    }
+
+{% endblock %}

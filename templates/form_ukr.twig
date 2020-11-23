@@ -1,0 +1,54 @@
+<form class="needs-validation" id="createNewUser" method="post">
+    <div class="form-row">
+        <div class="col-12 mb-3">
+            <label for="validationCustom01">Ім'я</label>
+            <input name="name" type="text" class="form-control" id="validationCustom01" placeholder="Введіть Ваше ім'я"
+                   required>
+            <div class="invalid-feedback">
+                Введіть ім'я.
+            </div>
+
+        </div>
+        <div class="col-12 mb-3">
+            <label for="validationCustom02">Прізвище</label>
+            <input name="surname" type="text" class="form-control" id="validationCustom02" placeholder="Введіть Ваше прізвище"
+                   required>
+            <div class="invalid-feedback">
+                Введіть прізвище.
+            </div>
+        </div>
+        <div class="col-12 mb-3">
+            <label for="validationCustomUsername">Email</label>
+            <div class="input-group">
+                <input name="email" type="text" class="form-control" id="validationCustomUsername"
+                       placeholder="Введіть Вашу пошту" aria-describedby="inputGroupPrepend" required
+                       pattern="^\S+@\S+\.\S+$">
+                <div class="invalid-feedback">
+                    Введіть валідну пошту.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-12 mb-3">
+            <label for="validationCustom03">Номер телефону у форматі +380 xx xxxxxxx</label>
+            <input name="phone" type="text" class="form-control" id="validationCustom03"
+                   placeholder="Введіть Ваш номер телефону" required
+                   pattern="^\+38(0\d{9})$">
+            <div class="invalid-feedback">
+                Введіть валідний номер телефону.
+            </div>
+        </div>
+        <div class="col-12 mb-3">
+            <label for="validationCustom04">Текст заявки</label>
+            <input name="description" type="text" class="form-control" id="validationCustom04" required>
+            <div class="invalid-feedback">
+                Введіть текст заявки.
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Подати заявку</button>
+</form>
+
+

@@ -1,0 +1,52 @@
+<form class="needs-validation" novalidate id="createNewUser" method="post">
+            <div class="form-row">
+                <div class="col-12 mb-3">
+                    <label for="validationCustom01">Name</label>
+                    <input name="name" type="text" class="form-control" id="validationCustom01" placeholder="Put your name"
+                           required>
+                    <div class="invalid-feedback">
+                        Put your name.
+                    </div>
+
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="validationCustom02">Surname</label>
+                    <input name="surname" type="text" class="form-control" id="validationCustom02" placeholder="Put your surname"
+                           required>
+                    <div class="invalid-feedback">
+                        Put your surname.
+                    </div>
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="validationCustomUsername">Email</label>
+                    <div class="input-group">
+                        <input name="email"  type="text" class="form-control" id="validationCustomUsername"
+                               placeholder="Put your email" aria-describedby="inputGroupPrepend" required
+                               pattern="^\S+@\S+\.\S+$">
+                        <div class="invalid-feedback">
+                            Put valid email.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-12 mb-3">
+                    <label for="validationCustom03">Put your phone number in +380 xx xxxxxxx format</label>
+                    <input name="phone" type="text" class="form-control" id="validationCustom03"
+                           placeholder="Put your phone number" required
+                           pattern="^\+38(0\d{9})$">
+                    <div class="invalid-feedback">
+                        Put valid phone number.
+                    </div>
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="validationCustom04">Text</label>
+                    <input name="description" type="text" class="form-control" id="validationCustom04" required>
+                    <div class="invalid-feedback">
+                        Put the text of your application.
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Send application</button>
+        </form>
