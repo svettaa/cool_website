@@ -31,6 +31,7 @@ articlesDB.mongoose
     });
 require("../routes/loadingRoute")(server);
 require("../routes/booksRoute")(server);
+require("../routes/trainigsRoute")(server);
 server.listen(8888, () => {
   console.log(`Server is running on port 8888.`);
 });

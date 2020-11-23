@@ -1,4 +1,4 @@
-const db  = require("./ModelTrainings").aplication;
+const db  = require("./ModelTrainings").training;
 
 
 exports.addNew = (req, res) => {
