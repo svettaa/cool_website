@@ -1,4 +1,5 @@
-const articles = require("../server/ModelAplications").aplication;
+const application = require("../server/ModelAplications").aplication;
+const training = require("../server/ModelTrainings").training;
 const path = require("path");
 const requests = require("../server/RequestsAplications");
 module.exports = function (app) {
@@ -11,8 +12,8 @@ module.exports = function (app) {
         next();
     });
 
-    /*app.route("/").get((req, res) => {
-        articles.find()
+    app.route("/admin").get((req, res) => {
+        training.find()
             .then(() => {
                 res.render(path.join(__dirname, "..", "adminTrainings.html"));
             })
@@ -22,7 +23,7 @@ module.exports = function (app) {
     });
 
     app.route("/adminTrainings.html").get((req, res) => {
-        articles.find()
+        training.find()
             .then(() => {
                 res.render(path.join(__dirname, "..", "adminTrainings.html"));
             })
@@ -30,7 +31,18 @@ module.exports = function (app) {
                 console.log(err);
             });
     });
-*/
+
+    app.route("/adminApplication.html").get((req, res) => {
+        application.find()
+            .then(() => {
+                res.render(path.join(__dirname, "..", "adminApplication.html"));
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    });
+
+
     const items1 = [
         {
             name: "Головна",
