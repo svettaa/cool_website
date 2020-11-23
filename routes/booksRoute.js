@@ -9,14 +9,14 @@ module.exports = function (app) {
     next();
   });
   app.route("/api/send").post(requests.sendEmails);
-    app.route("/api/group")
+    app.route("/api/aplication")
         .get(requests.getAll)
         .post(requests.addNew);
 
   app.route("/api/userid")
       .get(requests.getByMail)
 
-    app.route("/api/group/:id")
+    app.route("/api/aplication/:id")
         .get(requests.getOne)
         .post(requests.editOne)
         .delete(requests.removeOne);
