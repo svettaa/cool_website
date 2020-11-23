@@ -1,4 +1,4 @@
-const requests = require("../server/Requests");
+const requests = require("../server/RequestsAplications");
 
 module.exports = function (app) {
   app.use(function (req, res, next) {

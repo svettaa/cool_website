@@ -33,18 +33,6 @@ exports.makeVerificated = (req, res) => {
         });
 };
 
-//
-// exports.makeVerificated = (req, res) => {
-//     console.log(req.body);
-//     var sql = "UPDATE customers SET varificated = 'true' WHERE token = req.params.id";
-//     db.query(sql, function(err, user) {
-//         if (err) throw err;
-//         res.status(200).send(user); })
-//         .catch(err => {
-//             console.log(err);
-//         });
-//
-// };
 exports.getByMail = (req, res) => {
     db.find({email: req.body.email})
         .then(users => {
