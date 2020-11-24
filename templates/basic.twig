@@ -10,7 +10,10 @@
 
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <title>{% block title %}HW6{% endblock %}</title>
+    <title>
+      {% block title %}HW6{% endblock %}
+
+    </title>
 </head>
 <body>
 {% include '.templates\menu.twig' %}
@@ -87,6 +90,7 @@ $(document).on('click', '.nav-link', function () {
 $(document).ready(function() {
 
 
+
     $('a[href="' + location.pathname + '"]').closest('.nav-item').addClass('active');
 
 
@@ -112,13 +116,12 @@ $(document).ready(function() {
      let kkk;
 
     $('#createNewUser').submit(function (e) {
-        var jqxhr = $.getJSON( "../config/config.json") //сука блять я не єбу чого воно андефайнд тут
-       // kkk =JSON.parse($.getJSON( '../static/config.json'))
-      //  config.json.
+
 
         e.preventDefault();
         const tkn = Math.floor(new Date().getTime()/1000) + 7*24*60*60;
-        if(letter){
+
+        if(jsonfile.letter){
 
             const sendEmail =  $(this).find('[name=email]').val();
 
@@ -169,7 +172,7 @@ $(document).ready(function() {
                     name: $(this).find('[name=name]').val(),
                     email: $(this).find('[name=email]').val(),
                     phone: $(this).find('[name=phone]').val(),
-                    description: toString(jqxhr),
+                    description: $(this).find('[name=description]').val(),
                     varificated: true,
                     token: tkn
                 }),
@@ -192,6 +195,18 @@ $(document).ready(function() {
                 }
             });
         }});
+
+    let jsonfile;
+    function setJS(nh){
+        jsonfile=nh
+
+    }
+    $.ajax({
+        url: '/api/getconfig',
+        success: (response) => (setJS(response))
+
+    })
+
 });
 
 

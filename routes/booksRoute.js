@@ -16,7 +16,13 @@ module.exports = function (app) {
   app.route("/api/userid")
       .get(requests.getByMail)
 
-    app.route("/api/aplication/:id")
+
+  app.route("/api/getconfig")
+      .get(requests.getJsonFile)
+
+
+
+  app.route("/api/aplication/:id")
         .get(requests.getOne)
         .post(requests.editOne)
         .delete(requests.removeOne);
