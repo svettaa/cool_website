@@ -103,7 +103,7 @@
 
     <h2 class="mt-5">Applications</h2>
     <div id="message"></div>
-
+    <input name="r1" type="checkbox" id="one" onchange="fun1()" > Send emailproof letter
     <div class="row mt-5">
         <div class="col-12 mx-auto" id="table-wrapper">
         </div>
@@ -214,9 +214,40 @@
     function processErrorDeleteApplication(result) {
         showErrorBlock(modalEditMessageBlock, result.responseJSON.error);
     }
+    function fun1() {
+        var chbox;
+        var letter;
+        chbox=document.getElementById('one');
+        if (chbox.checked) {
+            letter = true;
+        }
+        else {
+            letter = false;
+        }
+        $.ajax({
 
+            type: 'GET',
+            url: '/api/changeconfig',
+            dataType: 'json',
+            data: JSON.stringify({
+
+                email: letter,
+
+            })
+            ,
+            beforeSend: function (x) {
+                x.setRequestHeader('Content-Type', 'application/json');
+            },
+
+            error: function (x) {
+                console.log(x.responseJSON);
+            }
+        });
+
+    }
     $(document).ready(function () {
         sendRequestGetAllApplication(buildApplicationTable);
+
         // $('#createNewUser').submit(function (e) {
         //
         //   let ltr

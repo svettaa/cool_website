@@ -1,6 +1,18 @@
 {
-
-  "websiteName": "Круті тренінги",
+  "websiteName": [
+    {
+      "name": "Головна",
+      "href": "/main.twig"
+    },
+    {
+      "name": "Тренінги",
+      "href": "/trainings.twig"
+    },
+    {
+      "name": "Про нас",
+      "href": "/aboutUs.twig"
+    }
+  ],
   "domenName": "cooltraining.com.ua",
   "img": "../img/image.jpeg",
   "menuColor": "",
@@ -17,9 +29,5 @@
       "name": "Про нас",
       "href": "/aboutUs.twig"
     }
-  ],
-  "letter": false
-
-
-
+  ]
 }
