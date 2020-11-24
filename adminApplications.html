@@ -243,8 +243,34 @@
         });
 
     }
-    $(document).ready(function () {
-        sendRequestGetAllApplication(buildApplicationTable);
+    $(document).ready(
+        function () {
+
+
+            {
+                sendRequestGetAllApplication(buildApplicationTable);
+                $.ajax({
+                    url: '/api/getconfig',
+                    success: (response) => (setJS(response))
+                })
+                let jsonfile;
+
+                function setJS(nh) {
+                    jsonfile = nh;
+
+
+                    document.getElementById('one').checked = jsonfile.letter
+                }
+
+
+
+            }
+
+
+
+
+
+
 
         // $('#createNewUser').submit(function (e) {
         //
