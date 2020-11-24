@@ -175,11 +175,11 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-12">
-            <button class="btn btn-info add-new">Add</button>
-        </div>
-    </div>
+<!--    <div class="row">-->
+<!--        <div class="col-12">-->
+<!--            <button class="btn btn-info add-new">Add</button>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 
 
@@ -233,7 +233,7 @@
         const tbody = table.find('tbody').eq(0);
         $.each(data, function () {
             const tr = $('<tr></tr>');
-            tr.append(createIconsTd(this._id, [tableLookSpanClassName, tableEditSpanClassName, tableDeleteSpanClassName]));
+            tr.append(createIconsTd(this._id, [tableLookSpanClassName, tableDeleteSpanClassName]));
             tr.append(createTd(this.name));
             tr.append(createTd(this.surname));
             tr.append(createTd(this.email));

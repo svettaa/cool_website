@@ -44,39 +44,31 @@ module.exports = function (app) {
     });
 
 
-    const items1 = [
-        {
-            name: "Головна",
-            href: "/main.twig"
-        },
-        {
-            name: "Тренінги",
-            href: "/main.twig"
-        },
-        {
-            name: "Про нас",
-            href: "/aboutUs.twig"
-        }
-    ];
+    const items1 = config.menuItems;
 
     app.route("/").get((req, res) => {
         res.render(path.join(__dirname, "../templates/", "main.twig"),
-            {menu_items: config.menuItems});
+            {menu_items: items1});
 
 
     });
 
     app.route("/main.twig").get((req, res) => {
-
+//КОЛИ РОУТ http://localhost:8888/main.twig МЕНЮ НЕ ПІДСВІДЧУЄ
        res.render(path.join(__dirname, "../templates/", "main.twig"),
-                {menu_items: config.menuItems});
+                {menu_items: items1});
     });
 
     app.route("/aboutUs.twig").get((req, res) => {
         res.render(path.join(__dirname, "../templates/", "aboutUs.twig"),
-            {menu_items: config.menuItems});
+            {menu_items: items1});
     });
 
+
+    app.route("/trainings.twig").get((req, res) => {
+        res.render(path.join(__dirname, "../templates/", "trainings.twig"),
+            {menu_items: items1});
+    });
     app.route('/varification/:id').get(
 
         (req, res) =>  {
