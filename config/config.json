@@ -1,9 +1,9 @@
 {
   "websiteName": "Круті тренінги",
-  "domainName": "cooltraining.com.ua",
+  "domenName": "cooltraining.com.ua",
   "img": "../static/img/image.jpeg",
   "menuColor": "#f5d4c1",
-  "menuItemsUkr": [
+  "menuItems": [
     {
       "name": "Головна",
       "href": "/main.twig"
@@ -17,19 +17,5 @@
       "href": "/aboutUs.twig"
     }
   ],
-  "menuItemsEng": [
-    {
-      "name": "Main",
-      "href": "/main.twig"
-    },
-    {
-      "name": "Trainings",
-      "href": "/trainings.twig"
-    },
-    {
-      "name": "About us",
-      "href": "/aboutUs.twig"
-    }
-  ],
-  "letter": false
+  "letter": true
 }
