@@ -3,6 +3,89 @@
 {% block title %}Тренінги{% endblock %}
 
 {% block content %}
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <script src="/static/training.js" type="application/javascript"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <style>
+        .expand{
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/babel">
+
+        class Training extends React.Component {
+
+            constructor(props) {
+                super(props);
+                this.state = {expanded: false};
+
+                this.name = props.name;
+                this.fullDescription = props.description;
+                this.shortDescription = this.fullDescription.substr(0, 100) + '...';
+            }
+
+            onChangeExpand() {
+                this.setState({
+                    expanded: !this.state.expanded
+                });
+            }
+
+            render() {
+                return (
+                    <div>
+                        <h1>{this.name}</h1>
+                        {this.state.expanded
+                            ? <div>
+                                <div>{this.fullDescription}</div>
+                                <span className="expand" onClick={() => {this.onChangeExpand()}}>Collapse</span>
+                            </div>
+                            : <div>
+                                <div>{this.shortDescription}</div>
+                                <span className="expand" onClick={() => {this.onChangeExpand()}}>Expand</span>
+                            </div>
+                        }
+                    </div>
+                );
+            }
+        }
+
+        function TrainingList(props) {
+            const elements = props.listData;
+            if (elements.length === 0) {
+                return <div>Currently, no trainings(</div>
+            }
+            return <div>{elements.map(el =>
+                <Training key={el._id} name={el.name} description={el.description}/>
+            )}</div>;
+        }
+
+        sendRequestGetAllTrainings(
+            listData => {
+
+                ReactDOM.render(
+                    TrainingList({listData: listData}),
+                    document.getElementById('root')
+                );
+            },
+            () => {
+                ReactDOM.render(
+                    <div>Error while loading</div>,
+                    document.getElementById('root')
+                );
+            }
+        );
+
+    </script>
 
 
+
+{% endblock %}
+
+{% block script %}
 {% endblock %}

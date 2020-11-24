@@ -20,7 +20,7 @@ let data = JSON.stringify(student, null, 2);
 
     try {
         //з відносним щляхом чомусь на даль не працбє
-        fs.writeFileSync('C:\\Users\\Sofiya\\Downloads\\Telegram Desktop\\cool (3)\\cool\\config\\config.json', data);
+        fs.writeFileSync('E:\\3year\\FrontBack\\my_homework\\cool\\config\\config.json', data);
         console.log("JSON data is saved.");
     } catch (error) {
         console.error(error);
