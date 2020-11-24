@@ -1,4 +1,4 @@
-<form id="createNewUser" method="post">
+<form id="createNewUser" method="post" name="registration" action="">
     <div class="form-row">
         <div class="col-12 mb-3">
             <label for="validationCustom01">Ім'я</label>
@@ -11,7 +11,8 @@
         </div>
         <div class="col-12 mb-3">
             <label for="validationCustom02">Прізвище</label>
-            <input name="surname" type="text" class="form-control" id="validationCustom02" placeholder="Введіть Ваше прізвище"
+            <input name="surname" type="text" class="form-control" id="validationCustom02"
+                   placeholder="Введіть Ваше прізвище"
                    required>
             <div class="invalid-feedback">
                 Введіть прізвище.
@@ -19,14 +20,14 @@
         </div>
         <div class="col-12 mb-3">
             <label for="validationCustomUsername">Email</label>
-            <div class="input-group">
-                <input name="email" type="text" class="form-control" id="validationCustomUsername"
-                       placeholder="Введіть Вашу пошту" aria-describedby="inputGroupPrepend" required
-                       pattern="^\S+@\S+\.\S+$">
-                <div class="invalid-feedback">
-                    Введіть валідну пошту.
-                </div>
+
+            <input name="email" type="text" class="form-control" id="validationCustomUsername"
+                   placeholder="Введіть Вашу пошту" aria-describedby="inputGroupPrepend" required
+                   pattern="^\S+@\S+\.\S+$">
+            <div class="invalid-feedback">
+                Введіть валідну пошту.
             </div>
+
         </div>
     </div>
     <div class="form-row">

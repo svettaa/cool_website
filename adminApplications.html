@@ -34,72 +34,6 @@
     </div>
 </div>
 
-<div id="modalEdit" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4>Add application</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="row">
-                <div class="col-10 mx-auto" id="messageEdit"></div>
-            </div>
-            <div class="modal-body">
-                <form id="edit-form">
-                    <div class="row">
-                        <div class="col-12 col-sm-10 mx-auto">
-                            <div class="form-group row ">
-                                <label for="name" class="col-md-3 col-form-label">Name *</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" id="name" name="name" required>
-                                </div>
-                            </div>
-                            <div class="form-group row ">
-                                <label for="surname" class="col-md-3 col-form-label">Surname *</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" id="surname" name="surname" required>
-                                </div>
-                            </div>
-                            <div class="form-group row ">
-                                <label for="email" class="col-md-3 col-form-label">Email *</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" id="email" name="email" required>
-                                </div>
-                            </div>
-                            <div class="form-group row ">
-                                <label for="telephone" class="col-md-3 col-form-label">Telephone number *</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" id="telephone" name="telephone" required>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="text" class="col-lg-3 col-form-label">Text *</label>
-                                <div class="col-lg-9">
-                                    <textarea class="form-control" rows="10" id="text"
-                                              name="text" required></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group row ">
-                                <label for="varificated" class="col-md-3 col-form-label">Verification *</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" id="varificated" name="varificated" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary submit" form="edit-form">Save</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <div id="modalLook" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -119,38 +53,38 @@
                             <div class="form-group row ">
                                 <label for="lookName" class="col-md-3 col-form-label">Name *</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" id="lookName" name="lookName" required>
+                                    <input type="text" class="form-control" id="lookName" name="lookName" required disabled>
                                 </div>
                             </div>
                             <div class="form-group row ">
                                 <label for="lookSurname" class="col-md-3 col-form-label">Surname *</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" id="lookSurname" name="lookSurname" required>
+                                    <input type="text" class="form-control" id="lookSurname" name="lookSurname" required disabled>
                                 </div>
                             </div>
                             <div class="form-group row ">
                                 <label for="lookEmail" class="col-md-3 col-form-label">Email *</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" id="lookEmail" name="lookEmail" required>
+                                    <input type="text" class="form-control" id="lookEmail" name="lookEmail" required disabled>
                                 </div>
                             </div>
                             <div class="form-group row ">
                                 <label for="lookPhone" class="col-md-3 col-form-label">Telephone number *</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" id="lookPhone" name="lookPhone" required>
+                                    <input type="text" class="form-control" id="lookPhone" name="lookPhone" required disabled>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="lookText" class="col-lg-3 col-form-label">Text *</label>
                                 <div class="col-lg-9">
                                     <textarea class="form-control" rows="10" id="lookText"
-                                              name="lookText" required></textarea>
+                                              name="lookText" required disabled></textarea>
                                 </div>
                             </div>
                             <div class="form-group row ">
                                 <label for="lookVarificated" class="col-md-3 col-form-label">Verification *</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" id="lookVarificated" name="lookVarificated" required>
+                                    <input type="text" class="form-control" id="lookVarificated" name="lookVarificated" required disabled>
                                 </div>
                             </div>
                         </div>
@@ -175,11 +109,6 @@
         </div>
     </div>
 
-<!--    <div class="row">-->
-<!--        <div class="col-12">-->
-<!--            <button class="btn btn-info add-new">Add</button>-->
-<!--        </div>-->
-<!--    </div>-->
 </div>
 
 
@@ -193,21 +122,9 @@
 <script>
 
 
-    const addNewButton = $('.add-new');
-
     const modalDelete = $('#modalDelete');
     const modalDeleteSubmit = modalDelete.find('.submit').eq(0);
 
-    const modalEditForm = $('#edit-form');
-    const modalLookForm = $('#look-form');
-
-    const modalEdit = $('#modalEdit');
-    const modalEditName = modalEdit.find('input[name="name"]').eq(0);
-    const modalEditSurname = modalEdit.find('input[name="surname"]').eq(0);
-    const modalEditEmail = modalEdit.find('input[name="email"]').eq(0);
-    const modalEditPhone = modalEdit.find('input[name="phone"]').eq(0);
-    const modalEditDescription = modalEdit.find('textarea[name="text"]').eq(0);
-    const modalEditVerification = modalEdit.find('input[name="varificated"]').eq(0);
 
     const modalLook = $('#modalLook');
     const modalLookName = modalLook.find('input[name="lookName"]').eq(0);
@@ -222,7 +139,6 @@
 
     const tableWrapper = $('#table-wrapper');
 
-    const tableEditSpanClassName = 'fa fa-edit table-edit-span';
     const tableDeleteSpanClassName = 'fa fa-trash table-delete-span';
     const tableLookSpanClassName = 'fas fa-eye table-look-span';
 
@@ -269,30 +185,6 @@
     }
 
 
-    function initAddApplicationEvent() {
-        addNewButton.off();
-        addNewButton.on('click', function () {
-            clearAddApplicationForm();
-            modalEdit.modal('show');
-
-            modalEditForm.off('submit');
-            modalEditForm.on('submit', function () {
-                sendRequestAddApplication(getEditData(), processResponseAddOrEditApplication, processErrorAddOrEditApplication);
-                return false;
-            });
-        });
-    }
-
-
-    function clearAddApplicationForm() {
-        modalEditName.val('');
-        modalEditSurname.val('');
-        modalEditEmail.val('');
-        modalEditPhone.val('');
-        modalEditDescription.val('');
-        modalEditVerification.val('');
-    }
-
     function buildApplicationTable(result) {
         message.html('');
         const table = createHeaderTable(
@@ -301,7 +193,6 @@
         fillTableWithRows(table, result);
 
         initDeleteApplicationEvents();
-        initAddApplicationEvent();
         initGetApplicationEvents();
     }
 
@@ -315,15 +206,6 @@
         modalLookVerification.val(result[0].varificated);
     }
 
-    function processResponseAddOrEditApplication() {
-        modalEdit.modal('hide');
-        sendRequestGetAllApplication(buildApplicationTable);
-    }
-
-    function processErrorAddOrEditApplication(result) {
-        showErrorBlock(modalEditMessageBlock, result.responseJSON.error);
-    }
-
     function processResponseDeleteApplication() {
         modalDelete.modal('hide');
         sendRequestGetAllApplication(buildApplicationTable);
@@ -332,18 +214,6 @@
     function processErrorDeleteApplication(result) {
         showErrorBlock(modalEditMessageBlock, result.responseJSON.error);
     }
-
-    function getEditData() {
-        return {
-            'name': modalEditName.val(),
-            'surname': modalEditSurname.val(),
-            'email': modalEditEmail.val(),
-            'phone': modalEditPhone.val(),
-            'description': modalEditDescription.val(),
-            'varificated': modalEditVerification.val()
-        };
-    }
-
 
     $(document).ready(function () {
         sendRequestGetAllApplication(buildApplicationTable);
