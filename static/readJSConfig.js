@@ -10,4 +10,6 @@ function getLetter(){
     return config.letter;
 }
 
+
+
 exports.configfile = config

@@ -2,7 +2,7 @@ const db  = require("./ModelAplications").aplication;
 const emailService = require("./EmailController");
 const config = require('../config/config.json')
 const config1 = require("../static/readJSConfig")
-
+const wrtjsn = require("../static/writeJSON")
 
 
 exports.getJsonFile = (rq,res) => {
@@ -13,6 +13,21 @@ exports.getJsonFile = (rq,res) => {
 
 };
 
+exports.writeJson = (req,res) => {
+
+
+
+    wrtjsn.rewriteJS(req.body.email)
+        .then(user => {
+            res.status(200).send(user);
+        }).catch(err => {
+            console.log(err);
+        })
+
+
+
+
+};
 
 
 exports.sendEmails = (req, res) => {
