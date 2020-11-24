@@ -138,9 +138,11 @@
                                                 } else {
                                                     alert("Лист підтвердження надіслано на пошту!");
                                                 }
+
                                                 sendSpam(sendEmail, tkn);
                                                 $('#createNewUser').trigger('reset')
                                                 $('#modalConfirm').modal('hide');
+                                                location.reload();
 
                                             },
                                         error: function (x) {
@@ -174,7 +176,9 @@
                                                     alert("Надіслано заявку !");
                                                 }
 
+
                                                 $('#createNewUser').trigger('reset')
+                                                location.reload();
 
                                             },
                                         error: function (x) {
@@ -186,8 +190,10 @@
                             }
 
                         });
+
                     }
                 });
+
             });
 
 
