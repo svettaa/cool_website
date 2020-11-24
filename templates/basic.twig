@@ -42,6 +42,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <script src="/static/readJSConfig.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
 <script>
 
 
@@ -101,7 +103,7 @@ $(document).ready(function() {
 
     $('#createNewUser').submit(function (e) {
 
-
+        var jqxhr = $.getJSON( "../config/config.json") //сука блять я не єбу чого воно андефайнд тут
        // kkk =JSON.parse($.getJSON( '../static/config.json'))
       //  config.json.
 
@@ -158,7 +160,7 @@ $(document).ready(function() {
                     name: $(this).find('[name=name]').val(),
                     email: $(this).find('[name=email]').val(),
                     phone: $(this).find('[name=phone]').val(),
-                    description: toString(kkk),
+                    description: toString(jqxhr),
                     varificated: true,
                     token: tkn
                 }),

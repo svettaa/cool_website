@@ -9,4 +9,5 @@ console.log(config.letter)
 function getLetter(){
     return config.letter;
 }
+
 exports.configfile = getLetter()
