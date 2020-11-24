@@ -52,7 +52,7 @@
             $(".nav-item").find(".active").removeClass("active");
         })
         $(document).ready(function () {
-            $('a[href="' + location.pathname + '"]').closest('.nav-item').addClass('active');
+
 
 
             //дані з конфіг джсон
@@ -213,22 +213,32 @@
             });
 
 
-            //змінити мову для форми
+            //змінити мову для форми та меню
             let place = document.getElementById('form-place');
-            var temp1 = document.getElementById('form_ukr');
-            var temp2 = document.getElementById('form_eng');
-            var clon1 = temp1.content.cloneNode(true);
-            var clon2 = temp2.content.cloneNode(true);
+            let temp1 = document.getElementById('form_ukr');
+            let temp2 = document.getElementById('form_eng');
+            let clon1 = temp1.content.cloneNode(true);
+            let clon2 = temp2.content.cloneNode(true);
+
+            let menuPlace = document.getElementById('nav1');
+            let menu_temp1 = document.getElementById('menu_ukr');
+            let menu_temp2 = document.getElementById('menu_eng');
+            let menu_clon1 = menu_temp1.content.cloneNode(true);
+            let menu_clon2 = menu_temp2.content.cloneNode(true);
 
             let lang = getCookie('lang');
 
             if (lang === 'eng') {
                 place.appendChild(clon2);
+
+                menuPlace.appendChild(menu_clon2);
             } else {
                 place.appendChild(clon1);
+
+                menuPlace.appendChild(menu_clon1);
             }
 
-
+            $('a[href="' + location.pathname + '"]').closest('.nav-item').addClass('active');
 
 
 

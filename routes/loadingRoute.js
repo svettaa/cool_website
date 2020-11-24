@@ -44,11 +44,12 @@ module.exports = function (app) {
     });
 
 
-    const items1 = config.menuItems;
+    const items1 = config.menuItemsUkr;
+    const items2 = config.menuItemsEng;
 
     app.route("/").get((req, res) => {
         res.render(path.join(__dirname, "../templates/", "main.twig"),
-            {menu_items: items1});
+            {menu_items1: items1, menu_items2: items2});
 
 
     });
@@ -56,25 +57,24 @@ module.exports = function (app) {
     app.route("/main.twig").get((req, res) => {
 
        res.render(path.join(__dirname, "../templates/", "main.twig"),
-                {menu_items: items1});
+           {menu_items1: items1, menu_items2: items2});
     });
 
     app.route("/aboutUs.twig").get((req, res) => {
         res.render(path.join(__dirname, "../templates/", "aboutUs.twig"),
-            {menu_items: items1});
+            {menu_items1: items1, menu_items2: items2});
     });
 
 
     app.route("/trainings.twig").get((req, res) => {
         res.render(path.join(__dirname, "../templates/", "trainings.twig"),
-            {menu_items: items1});
+            {menu_items1: items1, menu_items2: items2});
     });
     app.route('/varification/:id').get(
 
         (req, res) =>  {
         res.render(path.join(__dirname, "../templates/", "varification.html")
         )
-
     });
 
 };
