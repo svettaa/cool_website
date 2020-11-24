@@ -247,6 +247,21 @@
     $(document).ready(function () {
         sendRequestGetAllApplication(buildApplicationTable);
 
+        let jsonfile;
+
+
+        function setJS(nh) {
+            jsonfile = nh.letter;
+
+        }
+
+        $.ajax({
+            url: '/api/getconfig',
+            success: (response) => (setJS(response))
+        })
+
+
+
         // $('#createNewUser').submit(function (e) {
         //
         //   let ltr
