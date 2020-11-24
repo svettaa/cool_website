@@ -54,7 +54,7 @@ module.exports = function (app) {
     });
 
     app.route("/main.twig").get((req, res) => {
-//КОЛИ РОУТ http://localhost:8888/main.twig МЕНЮ НЕ ПІДСВІДЧУЄ
+
        res.render(path.join(__dirname, "../templates/", "main.twig"),
                 {menu_items: items1});
     });
