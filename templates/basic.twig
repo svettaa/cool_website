@@ -56,31 +56,6 @@
 
 
             //дані з конфіг джсон
-            let jsonfile;
-
-
-            function setJS(nh) {
-                jsonfile = nh;
-                console.log(jsonfile);
-                let logo = document.getElementById("logo");
-                logo.innerHTML = jsonfile.domainName;
-
-                {% block forimage %}{% endblock %}
-
-                let titles = document.getElementsByTagName('title');
-                $.each(titles, function () {
-                    this.innerHTML = jsonfile.websiteName;
-                });
-
-                let navbar = document.getElementsByClassName("navbar");
-                navbar[0].style.backgroundColor = jsonfile.menuColor;
-            }
-
-            $.ajax({
-                url: '/api/getconfig',
-                success: (response) => (setJS(response))
-            })
-
 
 
             $(function () {
@@ -124,10 +99,8 @@
 
                         $('#createNewUser').submit(function (e) {
 
-                            $.ajax({
-                                url: '/api/getconfig',
-                                success: function () {
-                                    (response) => (setJS(response));
+
+
 
                                     e.preventDefault();
                                     const tkn = Math.floor(new Date().getTime() / 1000) + 7 * 24 * 60 * 60;
@@ -204,9 +177,9 @@
                                             }
                                         });
                                     }
-                                }
 
-                            })
+
+
                         });
                     }
                 });
@@ -227,6 +200,31 @@
             } else {
                 place.appendChild(clon1);
             }
+
+            let jsonfile;
+
+
+            function setJS(nh) {
+                jsonfile = nh;
+                console.log(jsonfile);
+                let logo = document.getElementById("logo");
+                logo.innerHTML = jsonfile.domainName;
+
+                {% block forimage %}{% endblock %}
+
+                let titles = document.getElementsByTagName('title');
+                $.each(titles, function () {
+                    this.innerHTML = jsonfile.websiteName;
+                });
+
+                let navbar = document.getElementsByClassName("navbar");
+                navbar[0].style.backgroundColor = jsonfile.menuColor;
+            }
+
+            $.ajax({
+                url: '/api/getconfig',
+                success: (response) => (setJS(response))
+            })
 
 
 
