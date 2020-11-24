@@ -1,6 +1,7 @@
 const application = require("../server/ModelAplications").aplication;
 const training = require("../server/ModelTrainings").training;
 const path = require("path");
+const config=require("../config/config.json");
 const requests = require("../server/RequestsAplications");
 module.exports = function (app) {
     var varifiID;
@@ -60,7 +61,7 @@ module.exports = function (app) {
 
     app.route("/").get((req, res) => {
         res.render(path.join(__dirname, "../templates/", "main.twig"),
-                {menu_items: items1});
+            {menu_items: config.menuItems});
 
 
     });
@@ -68,12 +69,12 @@ module.exports = function (app) {
     app.route("/main.twig").get((req, res) => {
 
        res.render(path.join(__dirname, "../templates/", "main.twig"),
-                {menu_items: items1});
+                {menu_items: config.menuItems});
     });
 
     app.route("/aboutUs.twig").get((req, res) => {
         res.render(path.join(__dirname, "../templates/", "aboutUs.twig"),
-            {menu_items: items1});
+            {menu_items: config.menuItems});
     });
 
     app.route('/varification/:id').get(
