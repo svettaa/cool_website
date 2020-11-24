@@ -7,7 +7,8 @@ const wrtjsn = require("../static/writeJSON")
 
 exports.getJsonFile = (rq,res) => {
 
-    db.find().then( res.status(200).send(config1.configfile)).catch(err => {
+
+    db.find().then( res.status(200).send(require('../config/config.json'))).catch(err => {
         console.log(err);
     })
 
