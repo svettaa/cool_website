@@ -31,5 +31,5 @@
       "href": "/aboutUs.twig"
     }
   ],
-  "letter": true
+  "letter": false
 }

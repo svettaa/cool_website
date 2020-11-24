@@ -244,21 +244,32 @@
         });
 
     }
-    $(document).ready(function () {
-        sendRequestGetAllApplication(buildApplicationTable);
-
-        let jsonfile;
+    $(document).ready(
+        function () {
 
 
-        function setJS(nh) {
-            jsonfile = nh.letter;
+            {
+                sendRequestGetAllApplication(buildApplicationTable);
+                $.ajax({
+                    url: '/api/getconfig',
+                    success: (response) => (setJS(response))
+                })
+                let jsonfile;
 
-        }
+                function setJS(nh) {
+                    jsonfile = nh;
 
-        $.ajax({
-            url: '/api/getconfig',
-            success: (response) => (setJS(response))
-        })
+
+                    document.getElementById('one').checked = jsonfile.letter
+                }
+
+
+
+            }
+
+
+
+
 
 
 
