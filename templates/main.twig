@@ -5,6 +5,8 @@
 {% block content %}
 <div id="content"></div>
 
+    <img id="main_img" class="img-fluid" alt="image">
+
 <template id="ukr">
   <h1>Насолоджуйся послугами нашого тренінгового центру!</h1>
 
@@ -23,7 +25,7 @@
 
 {% block script %}
 
-//change form (language)
+
     let place = document.getElementById('content');
     var temp1 = document.getElementById('ukr');
     var temp2 = document.getElementById('eng');
@@ -39,4 +41,10 @@
         place.appendChild(clon1);
     }
 
+
+{% endblock %}
+
+{% block forimage %}
+    let img1 = document.getElementById("main_img");
+    img1.setAttribute("src", jsonfile.img);
 {% endblock %}

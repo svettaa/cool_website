@@ -1,8 +1,8 @@
 {
   "websiteName": "Круті тренінги",
-  "domenName": "cooltraining.com.ua",
-  "img": "../img/image.jpeg",
-  "menuColor": "",
+  "domainName": "cooltraining.com.ua",
+  "img": "../static/img/image.jpeg",
+  "menuColor": "#f5d4c1",
   "menuItems": [
     {
       "name": "Головна",

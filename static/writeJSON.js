@@ -6,7 +6,7 @@ exports.rewriteJS = (bln) =>
 
 let student = {
     "websiteName": config.websiteName,
-    "domenName": config.domenName,
+    "domenName": config.domainName,
     "img":config.img ,
     "menuColor": config.menuColor,
     "menuItems": config.menuItems,
