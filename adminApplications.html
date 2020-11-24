@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div id="modalDelete" class="modal fade" tabindex="-1" role="dialog">
+<div id="modalDelete" class="modal fade" value="1" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -224,15 +224,14 @@
         else {
             letter = false;
         }
+
         $.ajax({
 
-            type: 'GET',
+            type: 'POST',
             url: '/api/changeconfig',
             dataType: 'json',
             data: JSON.stringify({
-
                 email: letter,
-
             })
             ,
             beforeSend: function (x) {

@@ -21,7 +21,7 @@ module.exports = function (app) {
       .get(requests.getJsonFile)
 
   app.route("/api/changeconfig")
-      .get(requests.writeJson)
+      .post(requests.writeJson)
 
 
 
