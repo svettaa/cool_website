@@ -94,7 +94,21 @@
                     },
                     // сабміт
                     submitHandler: function () {
+
                         $('#createNewUser').submit(function (e) {
+
+
+
+                            $.ajax({
+                                url: '/api/getconfig',
+                                success: function () {
+                                    (response) => (setJS(response))
+
+
+
+
+
+
                             e.preventDefault();
                             const tkn = Math.floor(new Date().getTime() / 1000) + 7 * 24 * 60 * 60;
                             if (jsonfile.letter) {
@@ -170,6 +184,9 @@
                                     }
                                 });
                             }
+                                }
+
+                            })
                         });
                     }
                 });
