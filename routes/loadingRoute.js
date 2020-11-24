@@ -1,6 +1,7 @@
 const application = require("../server/ModelAplications").aplication;
 const training = require("../server/ModelTrainings").training;
 const path = require("path");
+const config=require("../config/config.json");
 const requests = require("../server/RequestsAplications");
 module.exports = function (app) {
     var varifiID;
@@ -43,24 +44,11 @@ module.exports = function (app) {
     });
 
 
-    const items1 = [
-        {
-            name: "Головна",
-            href: "/main.twig"
-        },
-        {
-            name: "Тренінги",
-            href: "/main.twig"
-        },
-        {
-            name: "Про нас",
-            href: "/aboutUs.twig"
-        }
-    ];
+    const items1 = config.menuItems;
 
     app.route("/").get((req, res) => {
         res.render(path.join(__dirname, "../templates/", "main.twig"),
-                {menu_items: items1});
+            {menu_items: items1});
 
 
     });
@@ -76,6 +64,11 @@ module.exports = function (app) {
             {menu_items: items1});
     });
 
+
+    app.route("/trainings.twig").get((req, res) => {
+        res.render(path.join(__dirname, "../templates/", "trainings.twig"),
+            {menu_items: items1});
+    });
     app.route('/varification/:id').get(
 
         (req, res) =>  {

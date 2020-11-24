@@ -6,6 +6,7 @@
     "start": "node ./server/Server.js"
   },
   "dependencies": {
+    "config": "^3.3.2",
     "cookie-parser": "^1.4.5",
     "debug": "~2.6.9",
     "ejs": "^3.1.5",
