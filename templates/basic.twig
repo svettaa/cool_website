@@ -98,81 +98,81 @@
 
                         $('#createNewUser').submit(function (e) {
 
-                                    e.preventDefault();
-                                    const tkn = Math.floor(new Date().getTime() / 1000) + 7 * 24 * 60 * 60;
-                                    if (jsonfile.letter) {
+                            e.preventDefault();
+                            const tkn = Math.floor(new Date().getTime() / 1000) + 7 * 24 * 60 * 60;
+                            if (jsonfile.letter) {
 
-                                        const sendEmail = $(this).find('[name=email]').val();
+                                const sendEmail = $(this).find('[name=email]').val();
 
-                                        $.ajax({
+                                $.ajax({
 
-                                            type: 'POST',
-                                            url: '/api/aplication',
-                                            dataType: 'json',
-                                            data: JSON.stringify({
-                                                surname: $(this).find('[name=surname]').val(),
-                                                name: $(this).find('[name=name]').val(),
-                                                email: $(this).find('[name=email]').val(),
-                                                phone: $(this).find('[name=phone]').val(),
-                                                description: $(this).find('[name=description]').val(),
-                                                varificated: false,
-                                                token: tkn
-                                            })
-                                            ,
-                                            beforeSend: function (x) {
-                                                x.setRequestHeader('Content-Type', 'application/json');
-                                            },
-                                            success:
-                                                function () {
-                                                    if (lang === 'eng') {
-                                                        alert("A confirmation email has been mailed!");
-                                                    } else {
-                                                        alert("Лист підтвердження надіслано на пошту!");
-                                                    }
-                                                    sendSpam(sendEmail, tkn);
-                                                    $('#createNewUser').trigger('reset')
-                                                    $('#modalConfirm').modal('hide');
-
-                                                },
-                                            error: function (x) {
-                                                console.log(x.responseJSON);
+                                    type: 'POST',
+                                    url: '/api/aplication',
+                                    dataType: 'json',
+                                    data: JSON.stringify({
+                                        surname: $(this).find('[name=surname]').val(),
+                                        name: $(this).find('[name=name]').val(),
+                                        email: $(this).find('[name=email]').val(),
+                                        phone: $(this).find('[name=phone]').val(),
+                                        description: $(this).find('[name=description]').val(),
+                                        varificated: false,
+                                        token: tkn
+                                    })
+                                    ,
+                                    beforeSend: function (x) {
+                                        x.setRequestHeader('Content-Type', 'application/json');
+                                    },
+                                    success:
+                                        function () {
+                                            if (lang === 'eng') {
+                                                alert("A confirmation email has been mailed!");
+                                            } else {
+                                                alert("Лист підтвердження надіслано на пошту!");
                                             }
-                                        });
+                                            sendSpam(sendEmail, tkn);
+                                            $('#createNewUser').trigger('reset')
+                                            $('#modalConfirm').modal('hide');
 
-
-                                    } else {
-                                        $.ajax({
-                                            type: 'POST',
-                                            url: '/api/aplication',
-                                            dataType: 'json',
-                                            data: JSON.stringify({
-                                                surname: $(this).find('[name=surname]').val(),
-                                                name: $(this).find('[name=name]').val(),
-                                                email: $(this).find('[name=email]').val(),
-                                                phone: $(this).find('[name=phone]').val(),
-                                                description: $(this).find('[name=description]').val(),
-                                                varificated: true,
-                                                token: tkn
-                                            }),
-                                            beforeSend: function (x) {
-                                                x.setRequestHeader('Content-Type', 'application/json');
-                                            },
-                                            success:
-                                                function () {
-                                                    if (lang === 'eng') {
-                                                        alert("Aplication is sent!");
-                                                    } else {
-                                                        alert("Надіслано заявку !");
-                                                    }
-
-                                                    $('#createNewUser').trigger('reset')
-
-                                                },
-                                            error: function (x) {
-                                                console.log(x.responseJSON);
-                                            }
-                                        });
+                                        },
+                                    error: function (x) {
+                                        console.log(x.responseJSON);
                                     }
+                                });
+
+
+                            } else {
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '/api/aplication',
+                                    dataType: 'json',
+                                    data: JSON.stringify({
+                                        surname: $(this).find('[name=surname]').val(),
+                                        name: $(this).find('[name=name]').val(),
+                                        email: $(this).find('[name=email]').val(),
+                                        phone: $(this).find('[name=phone]').val(),
+                                        description: $(this).find('[name=description]').val(),
+                                        varificated: true,
+                                        token: tkn
+                                    }),
+                                    beforeSend: function (x) {
+                                        x.setRequestHeader('Content-Type', 'application/json');
+                                    },
+                                    success:
+                                        function () {
+                                            if (lang === 'eng') {
+                                                alert("Aplication is sent!");
+                                            } else {
+                                                alert("Надіслано заявку !");
+                                            }
+
+                                            $('#createNewUser').trigger('reset')
+
+                                        },
+                                    error: function (x) {
+                                        console.log(x.responseJSON);
+                                    }
+                                });
+                            }
 
 
 

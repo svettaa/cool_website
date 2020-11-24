@@ -5,11 +5,13 @@ exports.rewriteJS = (bln) =>
 {
 
 let student = {
+
     "websiteName": config.websiteName,
-    "domenName": config.domainName,
+    "domainName": config.domainName,
     "img":config.img ,
     "menuColor": config.menuColor,
-    "menuItems": config.menuItems,
+    "menuItemsUkr":config.menuItemsUkr,
+    "menuItemsEng": config.menuItemsEng,
     "letter": bln
 };
 
@@ -23,5 +25,5 @@ let data = JSON.stringify(student, null, 2);
     } catch (error) {
         console.error(error);
     }
-    console.log(config);
+    console.log(require('../config/config.json'));
 }
